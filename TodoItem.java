@@ -4,11 +4,11 @@ class TodoItem{
 
 
 }
-    string title;
+    private string title;
 
-    LocalDate deadline;
+    private LocalDate deadline;
 
-    boolean isDone;
+    public boolean isDone;
 
         //description: contains true if TODO item is done, otherwise contains false. Default value is false
 
