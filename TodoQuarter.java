@@ -1,49 +1,48 @@
+import java.util.*;
+
 //This is the file containing a logic of an Eisenhower todo_quarter.
 
-class TodoQuarter{
+class TodoQuarter {
 
-}
 
-    private List todoItems;
+    private List<TodoItem> todoItems;
 
-    TodoQuarter(){
+    TodoQuarter() {
         todoItems = new ArrayList<TodoItem>();
     }
 
 
-    void addItem(String title, LocalDate deadline){
+   /* void addItem(String title, LocalDate deadline) {
         todoItems.add()
-    }
+    }*/
 
 //Append TodoItem object to todoItems sorted decreasing by deadline.
 
-    void removeItem(int index){
+    void removeItem(int index) {
         todoItems.remove(index);
     }
 
 
-
-
-    void archiveItems(){
-        for (int i=0;i<todoItems.size();i++){
-            if (todoItems[i].isDone){
+    void archiveItems() {
+        for (int i = 0; i < todoItems.size(); i++) {
+            if (todoItems.get(i).isDone) {
                 todoItems.remove(i);
             }
         }
     }
 
 
-    getItem(int index){
-        return todoItems[index];
-        }
+    TodoItem getItem(int index) {
+        return todoItems.get(index);
+    }
 
 
-    getItems(){
+    List<TodoItem> getItems() {
         return todoItems;
-        }
+    }
+}
 
-
-    toString()
+  //  toString()
 
 ///Returns a formatted list of todoItems sorted decreasing by deadline. There is an expecting output:
 

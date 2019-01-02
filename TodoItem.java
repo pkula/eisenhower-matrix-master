@@ -1,47 +1,45 @@
+import java.time.LocalDate;
 //This is the file containing a todoItem logic.
 
-class TodoItem{
+class TodoItem {
 
 
-}
-    private string title;
+    private String title;
 
     private LocalDate deadline;
 
     public boolean isDone;
 
-        //description: contains true if TODO item is done, otherwise contains false. Default value is false
+    //description: contains true if TODO item is done, otherwise contains false. Default value is false
 
 
-
-
-
-
-    TodoItem(String title, LocalDate deadline){
+    TodoItem(String title, LocalDate deadline) {
+        this.title = title;
+        this.deadline = deadline;
+        isDone = false;
 
     }
 
 
-    String getTitle(){
+    String getTitle() {
         return title;
     }
 
 
-
-    LocalDate getDeadline(){
+    LocalDate getDeadline() {
         return deadline;
     }
 
 
-    void mark(){
-        isDone = True;
+    void mark() {
+        isDone = true;
     }
 
-    void unmark(){
-        isDone = False;
+    void unmark() {
+        isDone = false;
     }
 
-
+/*
     toString() {
 
         Returns a formatted string with details about todoItem.Format of deadline is 'day-month'
@@ -53,4 +51,5 @@ class TodoItem{
         Expecting output for example undone item:
 
         [ ]28 - 6 submit assignment
-    }
+    }*/
+}

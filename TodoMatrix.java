@@ -1,14 +1,9 @@
+import java.util.*;
+
 
 class TodoMatrix{
 
-
-
-
     Map<String,TodoQuarter> todoQuarters;
-
-
-
-
 
 //key: String - status of todoQuarter, value: TodoQuarter object
 
@@ -19,28 +14,24 @@ class TodoMatrix{
 //- 'NN' means that todoQuarter contains not important & not urgent todoItems
 
 
-
-
-
     TodoMatrix(){
-        todoQuarters = new Map;
-        todoQuarters.put("IU",new TodoQuarter);
-        todoQuarters.put("IN",new TodoQuarter);
-        todoQuarters.put("NU",new TodoQuarter);
-        todoQuarters.put("NN",new TodoQuarter);
+        todoQuarters = new HashMap<>();
+        todoQuarters.put("IU",new TodoQuarter());
+        todoQuarters.put("IN",new TodoQuarter());
+        todoQuarters.put("NU",new TodoQuarter());
+        todoQuarters.put("NN",new TodoQuarter());
     }
-}
 
 
-    getQuarters(){
+    Map getQuarters(){
         return todoQuarters;
     }
 
 
-    getQuarter(String status){
+    TodoQuarter getQuarter(String status){
         return todoQuarters.get(status);
     }
-
+/*
 
     addItem(String title, LocalDate deadline, boolean isImportant)
 
@@ -74,3 +65,5 @@ If isImportant contains false then the last element of line should be an empty s
 
 
 
+*/
+}
