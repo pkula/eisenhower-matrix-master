@@ -39,17 +39,15 @@ class TodoItem {
         isDone = false;
     }
 
-/*
-    toString() {
 
-        Returns a formatted string with details about todoItem.Format of deadline is 'day-month'
-
-        Expecting output for example done item:
-
-        [x]12 - 6 submit assignment
-
-        Expecting output for example undone item:
-
-        [ ]28 - 6 submit assignment
-    }*/
+    public String toString() {
+        //String day = deadline.toString().substring(5,7);
+        //String day = deadline.toString().substring(8);
+        if (isDone) {
+            return "[x] " + deadline.toString().substring(5) + " " + title;
+        } else {
+            return "[ ] " + deadline.toString().substring(5) + " " + title;
+        }
+        //[x] 12-6 submit assignment
+    }
 }
