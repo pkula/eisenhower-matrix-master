@@ -14,13 +14,13 @@ class TodoQuarter {
 
 
     void addItem(String title, LocalDate deadline) {
-        for (int i=0;i<todoItems.size();i++){
-            if (todoItems.get(i).getDeadline().isBefore(  deadline  )){
-                todoItems.add(i, new TodoItem(title,deadline));
+        for (int i = 0; i < todoItems.size(); i++) {
+            if (todoItems.get(i).getDeadline().isBefore(deadline)) {
+                todoItems.add(i, new TodoItem(title, deadline));
                 return;
             }
         }
-        todoItems.add(new TodoItem(title,deadline));
+        todoItems.add(new TodoItem(title, deadline));
     }
 
 //Append TodoItem object to todoItems sorted decreasing by deadline.
@@ -47,17 +47,20 @@ class TodoQuarter {
     List<TodoItem> getItems() {
         return todoItems;
     }
-}
 
-    toString(){
-        String str;
-        for (int i=0;i<todoItems.size();i++){
-            str = str +
+
+    public String toString(){
+        String str = "";
+        for (int i=0;i<todoItems.size();i++) {
+            if (todoItems.get(i).isDone) {
+                str = str + "[x] " + todoItems.get(i).getDeadline().toString().substring(5) + " " + todoItems.get(i).getTitle();
+            } else {
+                str = str + "[ ] " + todoItems.get(i).getDeadline().toString().substring(5) + " " + todoItems.get(i).getTitle();
+            }
         }
-
-
+        return str;
     }
-
+}
 ///Returns a formatted list of todoItems sorted decreasing by deadline. There is an expecting output:
 
 // 2. [x] 11-6 submit assignment```
