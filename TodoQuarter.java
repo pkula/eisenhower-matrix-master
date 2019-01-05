@@ -53,9 +53,9 @@ class TodoQuarter {
         String str = "";
         for (int i=0;i<todoItems.size();i++) {
             if (todoItems.get(i).isDone) {
-                str = str + "[x] " + todoItems.get(i).getDeadline().toString().substring(5) + " " + todoItems.get(i).getTitle();
+                str = str + "[x] " + todoItems.get(i).getDeadline().toString().substring(5) + " " + todoItems.get(i).getTitle() + "\n";
             } else {
-                str = str + "[ ] " + todoItems.get(i).getDeadline().toString().substring(5) + " " + todoItems.get(i).getTitle();
+                str = str + "[ ] " + todoItems.get(i).getDeadline().toString().substring(5) + " " + todoItems.get(i).getTitle() + "\n" ;
             }
         }
         return str;

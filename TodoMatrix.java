@@ -1,5 +1,6 @@
 import java.util.*;
 import java.time.LocalDate;
+import java.lang.String;
 
 
 class TodoMatrix{
@@ -38,7 +39,7 @@ class TodoMatrix{
         LocalDate nowww = LocalDate.now();
         if (isImportant){
 
-            if (deadline.plusDays(3).isBefore(nowww.plusDays(3))){
+            if (deadline.isBefore(nowww.plusDays(3))){
                 todoQuarters.get("IU").addItem(title,deadline);
             }
             else{
@@ -46,7 +47,7 @@ class TodoMatrix{
             }
         }
         else{
-            if (deadline.plusDays(3).isBefore(nowww.plusDays(3))){
+            if (deadline.isBefore(nowww.plusDays(3))){
                 todoQuarters.get("NU").addItem(title,deadline);
             }
             else{
@@ -89,15 +90,23 @@ If isImportant contains false then the last element of line should be an empty s
 //Removes all TodoItem objects with a parameter isDone set to true from list todoItems in every element of dictionary todoQuarters
 
     public String toString(){
-        String str = "";
-        str = str + todoQuarters.get("IU").toString();
-        str = str + todoQuarters.get("IN").toString();
-        str = str + todoQuarters.get("NU").toString();
-        str = str + todoQuarters.get("NN").toString();
-        return str;
+        String s = "";
+        s = s + "important & urgent\n";
+        s = s + todoQuarters.get("IU").toString() + "\n";
+        s = s + "important & not urgent\n";
+        s = s + todoQuarters.get("IN").toString() + "\n";
+        s = s +"not important & urgent\n";
+        s = s + todoQuarters.get("NU").toString() + "\n";
+        s = s + "not important & not urgent\n";
+        s = s + todoQuarters.get("NN").toString() + "\n";
+        return s;
     }
 
 //Returns a todoQuarters list (an Eisenhower todoMatrix) formatted to string.
+
+
+
+
 
 
 
